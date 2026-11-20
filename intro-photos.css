@@ -14,3 +14,18 @@
 
 /* Legible secondary lines; retain the existing intro layout. */
 .intro .micro{font-size:clamp(10px,2.8vw,12px);line-height:1.5;letter-spacing:.16em}
+
+/* Reference motion: 24fps Lottie, measured positions; recreated with independent words. */
+.intro .caption{container-type:inline-size}
+.intro .scene.active .title{animation:none}
+.intro .intro-line{display:flex;justify-content:space-between;white-space:nowrap}
+.intro .intro-title-first .intro-line:last-child{justify-content:center}
+.intro .intro-title-second .intro-line:last-child{justify-content:flex-end}
+.intro .intro-word{display:inline-block;will-change:transform}
+.intro .word-love{--word-from:-7.4074cqw;--word-duration:1.833333s;--word-curve:cubic-bezier(.333,0,.667,1)}
+.intro .word-of{--word-from:7.4074cqw;--word-duration:2s;--word-curve:cubic-bezier(.435,0,.343,1)}
+.intro .word-life{--word-from:20cqw;--word-duration:1.833333s;--word-curve:cubic-bezier(.333,0,.667,1)}
+.intro .word-blessing{--word-from:9.2593cqw;--word-duration:2.166667s;--word-curve:cubic-bezier(.333,0,.667,1)}
+.intro .word-begins{--word-from:-25.9259cqw;--word-duration:2.166667s;--word-curve:cubic-bezier(.333,0,.319,1)}
+.intro .scene.active .intro-word{animation:introWordMove var(--word-duration) var(--word-curve) both}
+@keyframes introWordMove{from{transform:translateX(var(--word-from))}to{transform:translateX(0)}}

@@ -8,8 +8,9 @@ function renderEdges(frame,img,values){
  const sw=img.naturalWidth,sh=img.naturalHeight,base=Math.min(w/sw,h/sh),zoom=values.zoom,iw=sw*base,ih=sh*base;
  const x=((w-iw)*values.x/100-w/2)*zoom+w/2,y=((h-ih)*values.y/100-h/2)*zoom+h/2,lower=y+ih*zoom;
  // Sky extension stays as before, behind the untouched original photo.
- ctx.drawImage(img,0,0,sw,2,-30,-30,w+60,h+60);
- ctx.save();ctx.filter='blur(22px)';ctx.drawImage(canvas,-30,-30,w+60,h+60);ctx.restore();
+ // Use real cloud texture from a sky-only region, not a stretched two-pixel strip.
+ ctx.fillStyle='#bdd5ed';ctx.fillRect(0,0,w,h);
+ if(y>0){const skyBlur=42*(Number.isFinite(values.fade)?values.fade:45)/100;ctx.save();ctx.filter='blur('+skyBlur+'px)';ctx.drawImage(img,0,0,sw,Math.max(2,Math.round(sh*.12)),-32,-32,w+64,y+66);ctx.restore();}
  if(lower<h&&meadow.complete&&meadow.naturalWidth){
   const eh=Math.ceil(h-lower),texture=document.createElement('canvas');texture.width=w;texture.height=eh;const t=texture.getContext('2d',{willReadFrequently:true});
   const r=Math.max(w/meadow.naturalWidth,eh/meadow.naturalHeight);t.drawImage(meadow,0,0,meadow.naturalWidth*r,meadow.naturalHeight*r);

@@ -19,8 +19,10 @@ function renderEdges(frame,img,values){
   for(let i=0;i<pixels.data.length;i+=4)for(let k=0;k<3;k++)pixels.data[i+k]=Math.min(255,pixels.data[i+k]*gain[k]);t.putImageData(pixels,0,0);
   // No sampled edge strip: keep a clean continuous synthesized background.
   // Fade only the synthesized extension into its matching grass color.
+  // Blur only the synthesized background; never fade the foreground into a flat color.
   ctx.fillStyle='rgb('+target.map(v=>Math.round(v)).join(',')+')';ctx.fillRect(0,Math.floor(lower)-3,w,eh+6);
-  ctx.save();ctx.globalAlpha=1-(Number.isFinite(values.fade)?values.fade:45)/100;ctx.drawImage(texture,0,Math.floor(lower)-2,w,eh+2);ctx.restore();
+  const blur=40*(Number.isFinite(values.fade)?values.fade:45)/100;
+  ctx.save();ctx.filter='blur('+blur+'px)';ctx.drawImage(texture,-24,Math.floor(lower)-24,w+48,eh+48);ctx.restore();
  }
 }
 

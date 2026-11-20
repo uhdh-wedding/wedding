@@ -7,7 +7,7 @@ function renderEdges(frame,img,values){
  let canvas=frame.querySelector('canvas');if(!canvas){canvas=document.createElement('canvas');canvas.className='edge-background';canvas.setAttribute('aria-hidden','true');frame.prepend(canvas);}
  const w=Math.round(frame.clientWidth*2),h=Math.round(frame.clientHeight*2);canvas.width=w;canvas.height=h;const ctx=canvas.getContext('2d');
  // CSS filter also applies on browsers without CanvasRenderingContext2D.filter.
- canvas.style.filter='blur('+((Number.isFinite(values.fade)?values.fade:45)*.22)+'px)';
+ canvas.style.filter='blur('+((Number.isFinite(values.fade)?values.fade:45)*.15)+'px)';
 
  const sw=img.naturalWidth,sh=img.naturalHeight,base=Math.min(w/sw,h/sh),zoom=values.zoom,iw=sw*base,ih=sh*base;
  const x=((w-iw)*values.x/100-w/2)*zoom+w/2,y=((h-ih)*values.y/100-h/2)*zoom+h/2,lower=y+ih*zoom;
@@ -20,7 +20,7 @@ function renderEdges(frame,img,values){
   const avg=average(layer,0,Math.max(0,layer.height-20),layer.width,20),pixels=sc.getImageData(0,0,layer.width,layer.height);
   const gain=skyColor.map((v,k)=>Math.max(.7,Math.min(1.3,v/Math.max(1,avg[k]))));
   for(let i=0;i<pixels.data.length;i+=4)for(let k=0;k<3;k++)pixels.data[i+k]=Math.min(255,pixels.data[i+k]*gain[k]);sc.putImageData(pixels,0,0);
-  const skyBlur=42*(Number.isFinite(values.fade)?values.fade:45)/100;ctx.save();ctx.filter='blur('+skyBlur+'px)';ctx.drawImage(layer,-32,-32);ctx.restore();
+  const skyBlur=28*(Number.isFinite(values.fade)?values.fade:45)/100;ctx.save();ctx.filter='blur('+skyBlur+'px)';ctx.drawImage(layer,-32,-32);ctx.restore();
  }
  if(lower<h&&meadow.complete&&meadow.naturalWidth){
   const eh=Math.ceil(h-lower),texture=document.createElement('canvas');texture.width=w;texture.height=eh;const t=texture.getContext('2d',{willReadFrequently:true});
@@ -33,7 +33,7 @@ function renderEdges(frame,img,values){
   // Fade only the synthesized extension into its matching grass color.
   // Blur only the synthesized background; never fade the foreground into a flat color.
   ctx.fillStyle='rgb('+target.map(v=>Math.round(v)).join(',')+')';ctx.fillRect(0,Math.floor(lower)-160,w,eh+320);
-  const blur=40*(Number.isFinite(values.fade)?values.fade:45)/100;
+  const blur=27*(Number.isFinite(values.fade)?values.fade:45)/100;
   ctx.save();ctx.filter='blur('+blur+'px)';ctx.drawImage(texture,-24,Math.floor(lower)-24,w+48,eh+48);ctx.restore();
  }
 }

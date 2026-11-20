@@ -32,7 +32,7 @@ function renderEdges(frame,img,values){
   // No sampled edge strip: keep a clean continuous synthesized background.
   // Fade only the synthesized extension into its matching grass color.
   // Blur only the synthesized background; never fade the foreground into a flat color.
-  ctx.fillStyle='rgb('+target.map(v=>Math.round(v)).join(',')+')';ctx.fillRect(0,Math.floor(lower)-3,w,eh+6);
+  ctx.fillStyle='rgb('+target.map(v=>Math.round(v)).join(',')+')';ctx.fillRect(0,Math.floor(lower)-160,w,eh+320);
   const blur=40*(Number.isFinite(values.fade)?values.fade:45)/100;
   ctx.save();ctx.filter='blur('+blur+'px)';ctx.drawImage(texture,-24,Math.floor(lower)-24,w+48,eh+48);ctx.restore();
  }

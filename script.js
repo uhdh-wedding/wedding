@@ -192,7 +192,7 @@
   const at=(fn,ms)=>timers.push(setTimeout(fn,ms));
   function endIntro() {
     timers.forEach(clearTimeout); timers=[]; $('main').inert=false; intro.classList.add('fade-out'); document.body.classList.remove('intro-playing');
-    if(intro.contains(document.activeElement)) $('replay').focus({preventScroll:true});
+    if(intro.contains(document.activeElement)){if(document.activeElement.matches(':focus-visible'))$('replay').focus({preventScroll:true});else document.activeElement.blur();}
     at(()=>{intro.hidden=true;},450);
   }
   function startIntro() {
@@ -200,7 +200,7 @@
     timers.forEach(clearTimeout); timers=[];
     if(matchMedia('(prefers-reduced-motion: reduce)').matches) { intro.hidden=true; $('main').inert=false; return; }
     window.scrollTo(0,0); intro.hidden=false; intro.classList.remove('fade-out'); $('main').inert=true; document.body.classList.add('intro-playing');
-    scenes.forEach(s=>s.classList.remove('active')); void intro.offsetWidth; scenes[0].classList.add('active'); $('skip').focus({preventScroll:true});
+    scenes.forEach(s=>s.classList.remove('active')); void intro.offsetWidth; scenes[0].classList.add('active');
     const hold=c.introTiming?.photoMs||4000,gap=c.introTiming?.gapMs||400;
     let elapsed=0;
     scenes.forEach((scene,i)=>{const duration=i===0?(c.introTiming?.firstPhotoMs||hold):hold;if(i>0)at(()=>scene.classList.add('active'),elapsed);at(()=>scene.classList.remove('active'),elapsed+duration);elapsed+=duration+gap;});

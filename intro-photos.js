@@ -6,6 +6,8 @@ function renderEdges(frame,img,values){
  img.style.maskImage='none';img.style.webkitMaskImage='none';
  let canvas=frame.querySelector('canvas');if(!canvas){canvas=document.createElement('canvas');canvas.className='edge-background';canvas.setAttribute('aria-hidden','true');frame.prepend(canvas);}
  const w=Math.round(frame.clientWidth*2),h=Math.round(frame.clientHeight*2);canvas.width=w;canvas.height=h;const ctx=canvas.getContext('2d');
+ // CSS filter also applies on browsers without CanvasRenderingContext2D.filter.
+ canvas.style.filter='blur('+((Number.isFinite(values.fade)?values.fade:45)*.22)+'px)';
 
  const sw=img.naturalWidth,sh=img.naturalHeight,base=Math.min(w/sw,h/sh),zoom=values.zoom,iw=sw*base,ih=sh*base;
  const x=((w-iw)*values.x/100-w/2)*zoom+w/2,y=((h-ih)*values.y/100-h/2)*zoom+h/2,lower=y+ih*zoom;

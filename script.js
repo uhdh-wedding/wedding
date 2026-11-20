@@ -202,8 +202,9 @@
     window.scrollTo(0,0); intro.hidden=false; intro.classList.remove('fade-out'); $('main').inert=true; document.body.classList.add('intro-playing');
     scenes.forEach(s=>s.classList.remove('active')); void intro.offsetWidth; scenes[0].classList.add('active'); $('skip').focus({preventScroll:true});
     const hold=c.introTiming?.photoMs||4000,gap=c.introTiming?.gapMs||400;
-    scenes.forEach((scene,i)=>{if(i>0)at(()=>scene.classList.add('active'),i*(hold+gap));at(()=>scene.classList.remove('active'),i*(hold+gap)+hold);});
-    at(endIntro,scenes.length*(hold+gap));
+    let elapsed=0;
+    scenes.forEach((scene,i)=>{const duration=i===0?(c.introTiming?.firstPhotoMs||hold):hold;if(i>0)at(()=>scene.classList.add('active'),elapsed);at(()=>scene.classList.remove('active'),elapsed+duration);elapsed+=duration+gap;});
+    at(endIntro,elapsed);
   }
   $('skip').onclick=endIntro; $('replay').onclick=startIntro;
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!intro.hidden) endIntro();});

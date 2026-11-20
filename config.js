@@ -33,7 +33,7 @@ window.WEDDING = {
     { parents: ['임용진', '민영순'], relation: '장남', name: '임욱환' },
     { parents: ['김성배', '구경자'], relation: '장녀', name: '김다혜' }
   ],
-  introTiming: { photoMs: 5000, gapMs: 400 },
+  introTiming: { photoMs: 5000, firstPhotoMs: 4000, gapMs: 200 },
   photos: {
     intro: [{src:'assets/intro/photo-27.jpg',x:45,y:50,zoom:1.12,fade:66},{src:'assets/intro/photo-0320.jpg',x:50,y:50,zoom:1.13,fade:45}],
     main: {src:'assets/photo-story-222.jpg',position:'50% 50%'},

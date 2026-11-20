@@ -196,6 +196,7 @@
     at(()=>{intro.hidden=true;},450);
   }
   function startIntro() {
+    document.documentElement.classList.remove("intro-loading");
     timers.forEach(clearTimeout); timers=[];
     if(matchMedia('(prefers-reduced-motion: reduce)').matches) { intro.hidden=true; $('main').inert=false; return; }
     window.scrollTo(0,0); intro.hidden=false; intro.classList.remove('fade-out'); $('main').inert=true; document.body.classList.add('intro-playing');

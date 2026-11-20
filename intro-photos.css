@@ -9,3 +9,5 @@
 .intro .cropped-intro{background:#405d85}.intro .cropped-intro img{transform:none;object-position:50% 50%}
 
 .intro .title i{display:none!important;animation:none!important}
+
+.intro-loading #main{visibility:hidden}.intro-loading #intro-loader{display:flex!important;position:fixed;inset:0;z-index:10;align-items:center;justify-content:center;background:#f8f6f2;color:#888;font:13px "Wanted Sans",sans-serif}

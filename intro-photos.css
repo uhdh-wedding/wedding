@@ -29,3 +29,17 @@
 .intro .word-begins{--word-from:-25.9259cqw;--word-duration:2.166667s;--word-curve:cubic-bezier(.333,0,.319,1)}
 .intro .scene.active .intro-word{animation:introWordMove var(--word-duration) var(--word-curve) both}
 @keyframes introWordMove{from{transform:translateX(var(--word-from))}to{transform:translateX(0)}}
+
+/* First scene: words meet with one typographic space; LIFE moves beside the rule. */
+.intro .intro-title-first .intro-line:first-child{justify-content:center;gap:.25em}
+.intro .intro-title-first .word-love{--word-from:-25cqw}
+.intro .intro-title-first .word-of{--word-from:25cqw}
+.intro .intro-title-first .intro-life-line{position:relative;justify-content:center;gap:.25em;height:1em;align-items:center}
+.intro .intro-title-first .word-life{position:relative;left:auto;translate:none;--word-from:20cqw}
+.intro .intro-life-rule{position:relative;flex:0 0 25.9259cqw;width:25.9259cqw;height:1cqw;background:currentColor;transform-origin:center;transform:scaleX(0)}
+.intro .scene.active .intro-life-rule{animation:introLifeRule 1.625s .291667s cubic-bezier(.189,0,.665,1) both}
+@keyframes introLifeRule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* Slightly smaller intro headings. */
+.intro .title{font-size:40px}
+@media(max-width:350px){.intro .title{font-size:32px}}

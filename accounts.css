@@ -1,0 +1,15 @@
+#main #account-section{padding:60px 0}
+#account-section>.eyebrow,#account-section>h2,#account-section>.prose{margin-left:32px;margin-right:32px}
+#main #account-section h2{margin-bottom:24px}
+#main #account-section .prose{margin-top:0;margin-bottom:32px}
+#main #account-section .account-tabs{margin:0 auto 30px;background:#eaeaea;padding:3px;gap:0}
+#main #account-section .account-tabs button{padding:10px 22px;line-height:22px;color:#999}
+#main #account-section .account-tabs button[aria-selected=true]{color:#1a1a1a}
+.account-panel{display:flex;overflow-x:auto;gap:14px;padding:2px 32px 16px;scroll-snap-type:x mandatory;scroll-padding:0 32px;scrollbar-width:thin;scrollbar-color:#ddd transparent;overscroll-behavior-x:contain;text-align:center}
+#main #account-section .account-row{display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:16px;flex:0 0 85%;min-width:0;padding:22px 18px 16px;margin:0;border:1px solid #efefef;border-radius:16px;background:#fff;scroll-snap-align:start;text-align:center;font-weight:400}
+#main #account-section .account-row small{font:400 11px/18px 'Wanted Sans',sans-serif;color:#999;margin:0 0 5px}
+.account-name{color:#1a1a1a;font-weight:400}
+#main #account-section .account-row p{font:400 13px/23px 'Wanted Sans',sans-serif;margin:18px 0 0;color:#4d4c4c;overflow-wrap:anywhere}
+#main #account-section .account-row button{padding:11px 6px;border:1px solid #e6e6e6;border-radius:8px;background:white;color:#555;font:400 12px/20px 'Wanted Sans',sans-serif}
+#main #account-section .account-row button:disabled{color:#aaa;background:#fafafa;cursor:default}
+.account-scroll-hint{font:400 11px/20px 'Wanted Sans',sans-serif;color:#999;margin:8px 32px 0;text-align:center}

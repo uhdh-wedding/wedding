@@ -1,0 +1,54 @@
+@font-face{font-family:'Wanted Sans';src:url('assets/fonts/WantedSans-Regular.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Wanted Sans';src:url('assets/fonts/WantedSans-Bold.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:'Wanted Sans';src:url('assets/fonts/WantedSans-SemiBold.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
+/* Measured on the reference at a 425px card width:
+   body/calendar 15.2564px, headings 19.6154px, date 21.7949px.
+   These correspond to 14/18/20px on a 390px card, not fixed pixels.
+   Local font files avoid a remote stylesheet becoming a system-font fallback.
+   Intro typography intentionally remains untouched. */
+.phone{container-type:inline-size}
+#main,#contact-dialog{--type-unit:calc(100cqw / 39);font-family:'Wanted Sans',sans-serif;font-weight:400;font-synthesis:none;letter-spacing:normal}
+#main{font-size:calc(var(--type-unit)*1.4);line-height:calc(var(--type-unit)*2.5)}
+#main h2{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*1.8);font-weight:400;line-height:calc(var(--type-unit)*2.8);letter-spacing:normal;color:#1a1a1a}
+#main .prose,#main .families{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*1.4);font-weight:400;line-height:calc(var(--type-unit)*2.5);letter-spacing:normal}
+#main .prose{color:#4d4c4c}#main .families{color:#1a1a1a}
+#main .family-row{font-size:inherit;font-weight:400;line-height:inherit;white-space:nowrap}
+#main .family-row + .family-row{margin-top:4px}
+#main .family-name{color:#1a1a1a;font-size:inherit;font-weight:400}
+#main .family-separator,#main .family-relation{color:#999;font-size:inherit;font-weight:400}
+#main .eyebrow{font-size:calc(var(--type-unit)*1.4);line-height:calc(var(--type-unit)*2.2);letter-spacing:calc(var(--type-unit)*.2);font-weight:400}
+#main .calendar-section h2{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*2);font-weight:400;line-height:calc(var(--type-unit)*2.8);letter-spacing:calc(var(--type-unit)*.1)}
+#main #wedding-time{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*1.4);line-height:calc(var(--type-unit)*2.2);font-weight:400;color:#4d4c4c}
+#main .calendar,#main .calendar th,#main .calendar td{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*1.4);line-height:calc(var(--type-unit)*2.5);font-weight:400;letter-spacing:normal}
+#main .calendar td{color:#4d4c4c}#main .calendar th{color:#1a1a1a}
+#main .calendar th:first-child,#main .calendar td:first-child,#main .calendar td:last-child{color:#b27085}
+#main .venue{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*1.8);font-weight:400;line-height:calc(var(--type-unit)*2.8);letter-spacing:calc(var(--type-unit)*-.02);color:#1a1a1a}
+#main #address{font-size:calc(var(--type-unit)*1.6);line-height:calc(var(--type-unit)*2.4);font-weight:400;letter-spacing:calc(var(--type-unit)*-.02);color:#999}
+#main .contact-open,#main .account-tabs button{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*1.4);font-weight:400;line-height:calc(var(--type-unit)*2.5);letter-spacing:normal}
+#main .account-row,#main .account-row button{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*1.4);font-weight:400;line-height:calc(var(--type-unit)*2.5);letter-spacing:normal}
+#main .account-row p{color:#4d4c4c}
+#main .date-table{font-family:'Wanted Sans',sans-serif;font-size:14px;line-height:22px;font-weight:400;letter-spacing:normal}
+#main .date-labels{font-family:'Wanted Sans',sans-serif;font-size:10px;line-height:16px;font-weight:600}
+#main .date-values{font-size:14px;line-height:22px;font-weight:400}
+#main .transport,#main .button-row>*{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*1.3);line-height:calc(var(--type-unit)*2.2);font-weight:400}
+#main h1,#main #hero-info,#main .signature{font-family:'Wanted Sans',sans-serif;font-size:calc(var(--type-unit)*1.4);line-height:calc(var(--type-unit)*2.5);font-weight:400;letter-spacing:normal}
+#main .text-button{font-family:'Wanted Sans',sans-serif}
+#main .countdown-wrap{margin-top:34px;text-align:center}
+#main .countdown{display:flex;justify-content:center;align-items:flex-end;gap:8px}
+#main .countdown>div{min-width:38px}
+#main .countdown span{display:block;font:400 11px/20px 'Crimson Pro',serif;color:#999}
+#main .countdown strong{display:block;font:400 24px/32px 'Wanted Sans',sans-serif;color:#1a1a1a}
+#main .countdown i{font:400 16px/32px 'Wanted Sans',sans-serif;color:#777}
+#main #countdown-message{margin:22px 0 0;font-size:calc(var(--type-unit)*1.4);line-height:calc(var(--type-unit)*2.5);font-weight:400;color:#4d4c4c;word-break:keep-all}
+#main #countdown-note{margin-top:8px;font-size:11px}
+#contact-dialog{font-size:15px;line-height:27px}
+#contact-dialog h2{font-family:'Wanted Sans',sans-serif;font-size:20px;line-height:30px;font-weight:400}
+#contact-dialog .contact-row{font-size:15px;line-height:27px;font-weight:400}
+
+#main .photo-mark small,#toast,#lightbox{font-family:'Wanted Sans',sans-serif}
+
+
+/* OUR STORY: show the full original portrait without cropping. */
+#main #main-photo{aspect-ratio:2/3;height:auto}#main #main-photo img{object-fit:contain}
+
+.memorial-flower{display:inline-block!important;width:15px!important;height:18px!important;object-fit:contain!important;vertical-align:-3px;margin-right:4px}

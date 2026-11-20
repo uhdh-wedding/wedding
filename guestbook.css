@@ -1,0 +1,42 @@
+#main .guestbook-section{padding:60px 32px 48px}
+#main .guestbook-section h2{margin-bottom:20px}
+.guestbook-intro{margin:0 0 28px}
+.guestbook-list{text-align:left}
+.guestbook-toolbar{display:flex;align-items:center;justify-content:space-between;margin:24px 0 16px;gap:16px}
+.guestbook-toolbar p{margin:0;font-size:12px;color:#888}
+.guestbook-toolbar #guestbook-open{display:block;border:0;border-radius:6px;padding:11px 22px;font:400 13px/22px 'Wanted Sans',sans-serif}
+.guestbook-pagination{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin-top:22px}
+.guestbook-pagination button{min-width:32px;height:34px;border:0;border-radius:4px;background:transparent;color:#777;font-size:13px}
+.guestbook-pagination button[aria-current=page]{background:#444;color:#fff}
+.guestbook-pagination button:disabled{opacity:.35;cursor:default}
+#main .guestbook-section>*{opacity:1;transform:none}
+.guestbook-card{padding:21px 20px;margin:0 0 12px;border:1px solid #e9e9e9;border-radius:10px;background:#ffffffb3;overflow-wrap:anywhere}
+.guestbook-card header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.guestbook-card strong{font:600 14px/22px 'Wanted Sans',sans-serif;color:#333}
+.guestbook-remove{border:0;background:none;padding:5px;color:#999;font:400 11px/18px 'Wanted Sans',sans-serif}
+.guestbook-card .guestbook-message{font:400 14px/25px 'Wanted Sans',sans-serif;white-space:pre-wrap;margin:14px 0;color:#4d4c4c}
+.guestbook-card time{font:400 11px/20px 'Wanted Sans',sans-serif;color:#999}
+.guestbook-empty{font-size:13px;line-height:25px;color:#999;padding:24px 0;margin:0 0 20px}
+.guestbook-actions{display:flex;gap:8px;margin-top:20px}
+.guestbook-actions button{flex:1;padding:12px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#555;font:400 13px/22px 'Wanted Sans',sans-serif}
+#guestbook-open{background:#444;color:#fff;border-color:#444}
+.guestbook-status{font-size:12px;line-height:22px;color:#666;margin:12px 0}
+.guestbook-status:empty{display:none}
+.guestbook-local{font:400 11px/20px 'Wanted Sans',sans-serif;color:#999;margin:16px 0 0}
+dialog.guestbook-dialog{width:min(92vw,390px);height:auto;max-height:90dvh;margin:auto;border:0;border-radius:12px;background:#fafafa;color:#333;overflow:auto;font-family:'Wanted Sans',sans-serif}
+dialog.guestbook-dialog::backdrop{background:#0006}
+.guestbook-dialog-header{padding:18px 22px;border-bottom:1px solid #e8e8e8;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.guestbook-dialog-header h2{margin:0;font:400 17px/26px 'Wanted Sans',sans-serif}
+.guestbook-dialog-header button{border:0;background:none;color:#888;padding:0 4px;font:300 27px/28px 'Wanted Sans',sans-serif}
+.guestbook-dialog form{padding:22px}
+.guestbook-dialog label{display:block;font-size:13px;line-height:22px;margin-bottom:18px}
+.guestbook-dialog input,.guestbook-dialog textarea{display:block;width:100%;padding:11px 12px;margin-top:7px;border:1px solid #ddd;border-radius:6px;background:#fff;color:#333;font:400 14px/23px 'Wanted Sans',sans-serif}
+.guestbook-dialog textarea{resize:vertical;min-height:145px}
+.guestbook-dialog input:focus-visible,.guestbook-dialog textarea:focus-visible{outline:2px solid #888;outline-offset:2px}
+.guestbook-dialog small{display:block;font-size:11px;color:#999;line-height:20px;margin-top:5px}
+#guestbook-length{text-align:right}
+.guestbook-submit{width:100%;padding:12px;background:#444;color:#fff;border:0;border-radius:7px;font:400 14px/24px 'Wanted Sans',sans-serif}
+.guestbook-submit:disabled{opacity:.5;cursor:wait}
+.guestbook-error{font-size:12px;line-height:22px;color:#b65050;word-break:keep-all;margin:0 0 14px}
+.guestbook-error:empty{display:none}
+.guestbook-delete-note{font-size:13px;line-height:24px;margin:0 0 20px;color:#666}

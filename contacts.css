@@ -1,0 +1,16 @@
+#main .open-contacts{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin:28px auto 0;padding:12px 40px;border:1px solid #e7e7e7;border-radius:10px;background:#ffffffb3;color:#4d4c4c;font:400 14px/22px 'Wanted Sans',sans-serif}
+.open-contacts svg{width:16px;height:16px}
+#contacts-dialog{width:min(100%,430px);height:100dvh;max-width:430px;max-height:100dvh;margin:0 auto;padding:0;background:#fff;color:#444;font-family:'Wanted Sans',sans-serif;overflow-y:auto}
+#contacts-dialog::backdrop{background:#0005}
+.contacts-header{position:relative;padding:16px 50px;border-bottom:1px solid #eee;text-align:center}
+.contacts-header h2{font:400 14px/22px 'Wanted Sans',sans-serif;margin:0;color:#555}
+#close-contacts{position:absolute;right:14px;top:10px;border:0;background:none;color:#999;font:300 28px/30px 'Wanted Sans',sans-serif;padding:0 8px}
+#contact-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:30px 36px;text-align:center}
+.contact-column h3{font:400 14px/22px 'Wanted Sans',sans-serif;margin:0 0 16px}
+.contact-column.groom{--contact-accent:#748e98}.contact-column.bride{--contact-accent:#b98585}
+.contact-column h3,.person-actions{color:var(--contact-accent)}
+.person-contact{margin-bottom:25px}.person-contact p{margin:0 0 8px;font:400 14px/23px 'Wanted Sans',sans-serif;color:#444;white-space:nowrap}
+.contact-role{color:#777}.person-actions{display:flex;justify-content:center;gap:10px}
+.person-actions a,.person-actions button{display:flex;align-items:center;justify-content:center;width:34px;height:32px;padding:7px;border:0;background:none;color:inherit;border-radius:5px}
+.person-actions svg{width:18px;height:18px}.person-actions button:disabled{opacity:.35;cursor:default}
+@media(max-width:350px){#contact-columns{padding-left:22px;padding-right:22px;gap:12px}.person-contact p{font-size:13px}}

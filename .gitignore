@@ -1,0 +1,48 @@
+# Only the invitation runtime is eligible for upload from this mixed work folder.
+# This does not remove files already tracked in an existing repository.
+/*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/config.js
+!/script.js
+!/venue-map.js
+!/navigation.js
+!/contacts.js
+!/guestbook.js
+!/intro-photos.js
+!/style.css
+!/typography.css
+!/location.css
+!/gallery.css
+!/contacts.css
+!/accounts.css
+!/guestbook.css
+!/intro-photos.css
+!/assets/
+
+# Secrets and local records must never be included, even below allowed folders.
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/.local/
+**/credentials*.json
+**/*service-account*.json
+
+# Unused originals and internal screenshots are not invitation assets.
+/assets/intro/photo-222.jpg
+/assets/map-verified.png
+/assets/accounts-preview.png
+
+# Large unoptimized gallery originals stay local; publish assets/gallery instead.
+/assets/gallery-demo/
+
+# Font catalog assets are local previews; the invitation uses Wanted Sans.
+/assets/fonts/*
+!/assets/fonts/WantedSans-Regular.woff2
+!/assets/fonts/WantedSans-SemiBold.woff2
+!/assets/fonts/WantedSans-OFL.txt
+!/assets/fonts/WantedSans-Bold.woff2

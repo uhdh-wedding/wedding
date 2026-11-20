@@ -18,7 +18,7 @@
 .navigation-block h3,.transport-item h3{font-size:14px;font-weight:400;color:#1a1a1a;margin:0 0 8px}
 #main .navigation-block h3{margin:0 0 12px;font:600 calc(var(--type-unit)*1.4)/calc(var(--type-unit)*2.5) 'Wanted Sans',sans-serif}
 .navigation-block>p{font-size:13px;line-height:22px;color:#777;margin:0 0 16px}
-#main .navigation-block .button-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+#main .navigation-block .button-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-width:260px;margin-left:auto;margin-right:auto}
 #main .navigation-block .button-row a{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:4px;padding:0 2px;min-height:44px;border:1px solid rgba(64,64,64,.16);border-radius:8px;background:#fff;font:400 12px/18px 'Wanted Sans',sans-serif;white-space:nowrap}
 .map-app{display:block;width:18px;height:18px;object-fit:contain;flex-shrink:0}
 .navigation-help{margin:16px 32px 0;padding:15px;background:#f0f0f0;text-align:left;font-size:12px;line-height:1.8;color:#666}

@@ -86,7 +86,6 @@
   if(c.venuePhone){text('venue-phone', `Tel. ${c.venuePhone}`);$('venue-phone').href='tel:'+c.venuePhone.replace(/[^+\d]/g,'');$('venue-phone').hidden=false;}
   const query = encodeURIComponent(`${c.venue} ${c.address}`.trim());
   $('naver-map').href = safeURL(c.map?.naverDirections) || `https://map.naver.com/p/search/${query}`;
-  $('kakao-map').href = `https://map.kakao.com/link/search/${query}`;
   c.transport.forEach(value => {
     if(typeof value==='string'){const p=document.createElement('p');p.textContent=value;$('transport').append(p);return;}
     const block=document.createElement('div');block.className='transport-item';const title=document.createElement('h3');title.textContent=value.title;const list=document.createElement('ul');

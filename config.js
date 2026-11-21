@@ -48,7 +48,7 @@ window.WEDDING = {
   contactGroups: [
     { title: '신랑 측', side: 'groom', people: [
       { role: '신랑', name: '임욱환', phone: '010-4412-9003' },
-      { role: '아버지', name: '임용진', phone: '050-5318-9003' },
+      { role: '아버지', name: '임용진', phone: '010-5318-9003' },
       { role: '어머니', name: '민영순', phone: '010-5144-5307' }
     ] },
     { title: '신부 측', side: 'bride', people: [

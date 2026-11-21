@@ -47,3 +47,10 @@
 /* Overscan the blurred background so its transparent filter boundary stays outside the frame. */
 .intro .configured-intro{background:linear-gradient(to bottom,#c2d8ed 0%,#c2d8ed 45%,#4b5634 75%,#4b5634 100%)}
 .intro .configured-intro .edge-background{inset:-48px;width:calc(100% + 96px);height:calc(100% + 96px)}
+
+.music-toggle{position:fixed;top:calc(32px + env(safe-area-inset-top));right:max(14px,calc(50% - 201px));left:auto;z-index:6;display:flex;align-items:center;justify-content:center;width:32px;height:26px;padding:5px;border:0;border-radius:50%;background:#999;color:#fff;cursor:pointer}
+.music-toggle[aria-pressed="true"]{background:#514c4680}
+
+.music-toggle svg{width:20px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+.music-toggle span{display:none}
+body.intro-playing .music-toggle{right:max(88px,calc(50% - 127px))}

@@ -187,6 +187,17 @@
     if(e.key==='Home'){e.preventDefault();showPhoto(0);}
     if(e.key==='End'){e.preventDefault();showPhoto(gallery.length-1);}
   });
+  const bgm=$('wedding-bgm'),musicToggle=$('music-toggle');
+  bgm.volume=.35;
+  let musicPausedByUser=false;
+  function updateMusic(){const playing=!bgm.paused;musicToggle.setAttribute('aria-pressed',String(playing));musicToggle.setAttribute('aria-label',playing?'배경음악 일시정지':'배경음악 재생');musicToggle.querySelector('span').textContent=playing?'음악 끄기':'음악 켜기';}
+  function playMusic(){if(!musicPausedByUser)bgm.play().catch(()=>{});}
+  bgm.addEventListener('play',updateMusic);bgm.addEventListener('pause',updateMusic);
+  bgm.addEventListener('error',()=>{musicToggle.querySelector('span').textContent='음원 확인 필요';musicToggle.disabled=true;});
+  musicToggle.addEventListener('click',()=>{if(bgm.paused){musicPausedByUser=false;playMusic();}else{musicPausedByUser=true;bgm.pause();}});
+  document.addEventListener('click',e=>{if(!e.target.closest('#music-toggle'))playMusic();},{once:true});
+  document.addEventListener('keydown',e=>{if(['Enter',' '].includes(e.key)&&!e.target.closest('#music-toggle'))playMusic();},{once:true});
+  playMusic();
   const intro=$('intro'), scenes=[...intro.querySelectorAll('.scene')]; let timers=[];
   const at=(fn,ms)=>timers.push(setTimeout(fn,ms));
   function endIntro() {

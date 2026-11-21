@@ -14,3 +14,6 @@
 .person-actions a,.person-actions button{display:flex;align-items:center;justify-content:center;width:34px;height:32px;padding:7px;border:0;background:none;color:inherit;border-radius:5px}
 .person-actions svg{width:18px;height:18px}.person-actions button:disabled{opacity:.35;cursor:default}
 @media(max-width:350px){#contact-columns{padding-left:22px;padding-right:22px;gap:12px}.person-contact p{font-size:13px}}
+
+/* Match the invitation section's 66px opening space below its message. */
+#invitation-section .families{margin-top:66px}

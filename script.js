@@ -13,7 +13,8 @@
     if (!src) return;
     const img = document.createElement('img');
     img.alt = item.alt || alt; img.style.objectPosition = item.position || '50% 50%';
-    img.decoding = 'async'; img.loading = slot.closest('.gallery') ? 'lazy' : 'eager';
+    img.decoding = 'async'; img.loading = slot.closest('.gallery') || slot.id==='main-photo' ? 'lazy' : 'eager';
+    img.fetchPriority=slot.id==='intro-photo-0'?'high':slot.id==='intro-photo-1'?'low':'auto';
     img.addEventListener('load', () => slot.querySelector('.photo-mark')?.remove());
     img.addEventListener('error', () => {
       img.remove(); const fallback = document.createElement('span');
@@ -234,7 +235,7 @@
     revealNodes.forEach(el=>revealObserver.observe(el));
   }
   motionQuery.addEventListener('change',event=>{if(event.matches){revealObserver?.disconnect();revealNodes.forEach(el=>el.classList.add('is-visible'));}});
-  Promise.all(introReady).then(startIntro);
+  Promise.resolve(introReady[0]).then(startIntro);
 })();
 
 

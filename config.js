@@ -62,22 +62,22 @@ window.WEDDING = {
     "group": "신랑 측",
     "role": "신랑",
     "name": "임욱환",
-    "bank": "",
-    "number": ""
+    "bank": "신한은행",
+    "number": "110-329-004661"
   },
   {
     "group": "신랑 측",
     "role": "아버지",
     "name": "임용진",
-    "bank": "",
-    "number": ""
+    "bank": "농협",
+    "number": "352-0964-2967-63"
   },
   {
     "group": "신랑 측",
     "role": "어머니",
     "name": "민영순",
-    "bank": "",
-    "number": ""
+    "bank": "신한은행",
+    "number": "352-04-527640"
   },
   {
     "group": "신부 측",
